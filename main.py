@@ -14,6 +14,7 @@ def get_letters_to_hide(t):
 
 def hide_text(document, text_to_hide, filename):
     letters_to_hide = get_letters_to_hide(text_to_hide)
+    amount_of_letters = len(letters_to_hide)
     for para in document.paragraphs:
         text = para.text.split()
         para.text = ''
@@ -40,7 +41,8 @@ def hide_text(document, text_to_hide, filename):
             else:
                 para.add_run(word + " ")
 
-            document.save(filename)
+    document.save(filename)
+    print(f"{amount_of_letters - len(letters_to_hide)} of {amount_of_letters} letters has been hidden!")
 
 
-hide_text(doc, to_hide_text, 'text.docx')
+hide_text(doc, to_hide_text, 'text2.docx')
