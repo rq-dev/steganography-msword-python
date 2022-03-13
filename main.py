@@ -1,6 +1,6 @@
-import docx
 from docx.shared import RGBColor
 import string
+import docx
 
 doc = docx.Document('./test.docx')
 f = open('./text.txt', 'r')
@@ -40,7 +40,6 @@ def hide_text(document, text_to_hide, filename):
                 para.add_run(" ")
             else:
                 para.add_run(word + " ")
-
     document.save(filename)
     print(f"{amount_of_letters - len(letters_to_hide)} of {amount_of_letters} letters has been hidden!")
 
