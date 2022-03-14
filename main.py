@@ -27,7 +27,7 @@ def hide_text(document, text_to_hide, filename):
                 # print(words_letters)
                 # is_marked = False
                 for l in words_letters:
-                    if not is_marked and l.lower() == letters_to_hide[0].lower():
+                    if l.lower() == letters_to_hide[0].lower():
                         isLower = l.islower()
                         if not isLower:
                             l = l.upper()
