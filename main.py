@@ -25,7 +25,7 @@ def hide_text(document, text_to_hide, filename):
             if letters_to_hide[0].lower() in word.lower():
                 words_letters = list(word)
                 # print(words_letters)
-                is_marked = False
+                # is_marked = False
                 for l in words_letters:
                     if not is_marked and l.lower() == letters_to_hide[0].lower():
                         isLower = l.islower()
@@ -34,7 +34,7 @@ def hide_text(document, text_to_hide, filename):
                         del letters_to_hide[0]
                         # print(letters_to_hide)
                         para.add_run(l).font.color.rgb = color
-                        is_marked = True
+
                     else:
                         para.add_run(l)
                 para.add_run(" ")
