@@ -27,7 +27,7 @@ def hide_text(document, text_to_hide, filename):
                 # print(words_letters)
                 # is_marked = False
                 for l in words_letters:
-                    if l.lower() == letters_to_hide[0].lower():
+                    if len(letters_to_hide) != 0 and l.lower() == letters_to_hide[0].lower():
                         isLower = l.islower()
                         if not isLower:
                             l = l.upper()
@@ -41,7 +41,7 @@ def hide_text(document, text_to_hide, filename):
             else:
                 para.add_run(word + " ")
     document.save(filename)
-    print(f"{amount_of_letters - len(letters_to_hide)} of {amount_of_letters} letters has been hidden!")
+    print(f"{amount_of_letters - len(letters_to_hide)} of {amount_of_letters} letters have been hidden!")
 
 
-hide_text(doc, to_hide_text, 'text2.docx')
+hide_text(doc, to_hide_text, 'out.docx')
